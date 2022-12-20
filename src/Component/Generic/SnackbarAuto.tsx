@@ -1,15 +1,18 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
+import MuiAlert ,{AlertProps,AlertColor} from "@mui/material/Alert";
 interface props{
-  handleClose:any,
-  open:any,
-  type:string,
-  children:any
+  handleClose:Function,
+  open:boolean,
+  type:AlertColor,
+  children:React.ReactNode
 }
 
-const Alert = React.forwardRef(function Alert(props:any, ref:any) {
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
@@ -20,11 +23,11 @@ export default function SnackbarAuto(props:props) {
       <Snackbar
         open={props.open}
         autoHideDuration={3000}
-        onClose={props.handleClose}
+        onClose={(e)=>props.handleClose(e)}
         anchorOrigin={{ horizontal: "right", vertical: "top" }}
       >
         <Alert
-          onClose={props.handleClose}
+          onClose={(e)=>props.handleClose(e)}
           severity={`${props.type}`}
           sx={{ width: "100%" }}
         >

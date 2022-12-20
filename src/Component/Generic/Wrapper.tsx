@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 interface props{
   heading:string,
-  children:any
+  children:React.ReactNode
 }
 
 export default function Wrapper(props:props) {

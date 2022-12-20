@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 interface props{
   to:string,
-  children:any
+  children:React.ReactNode
 }
 const LinkButton = (props:props) => (
   

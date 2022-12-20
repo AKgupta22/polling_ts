@@ -16,10 +16,9 @@ import BackButton from "../Generic/BackButton";
 import { events, stateTypes } from "../../TypeScript/tsConfig";
 
 export default function AdminAddPoll() {
-  
   const dispatch = useDispatch();
   const state = useSelector((state: stateTypes) => state.PollAddReducer);
-  const [fields, setFields] = useState<[...any]>([]);
+  const [fields, setFields] = useState<Array<JSX.Element>>([]);
   const [show, setShow] = useState(false);
   const [duplicate, setDuplicate] = useState(false);
   const navigate = useNavigate();
@@ -57,7 +56,7 @@ export default function AdminAddPoll() {
 
   const handleForm = (e: events) => {
     e.preventDefault();
-    const validateDuplicate = (arr: [...any]) =>
+    const validateDuplicate = (arr: Array<Object>) =>
       new Set(arr).size !== arr.length;
     if (validateDuplicate(Object.values(data).slice(1)) === false) {
       dispatch(pollAddRequest({ data: data, token: getLocalStorage("token") }));

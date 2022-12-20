@@ -1,11 +1,10 @@
 import React from "react";
 import { Box } from "@mui/system";
-interface props{
-  children:any,
-  handler:any
+interface props {
+  children: React.ReactNode;
+  handler: Function;
 }
-export default function FormWrapper(props:props) {
-  
+export default function FormWrapper(props: props) {
   return (
     <Box
       component="form"
@@ -13,7 +12,7 @@ export default function FormWrapper(props:props) {
         "& > :not(style)": { m: 1, width: "100%" },
       }}
       autoComplete="off"
-      onSubmit={props.handler}
+      onSubmit={(e) => props.handler(e)}
       className="w-75 m-auto p-4"
     >
       {props.children}
@@ -21,4 +20,4 @@ export default function FormWrapper(props:props) {
   );
 }
 
-React.memo(FormWrapper)
+React.memo(FormWrapper);

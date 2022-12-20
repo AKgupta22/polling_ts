@@ -16,7 +16,7 @@ import Wrapper from "../Generic/Wrapper";
 import FormWrapper from "../Generic/FormWrapper";
 import AlertAdd from "../Generic/AlertAdd";
 import BackButton from "../Generic/BackButton";
-import { stateTypes, itemType } from "../../TypeScript/tsConfig";
+import { stateTypes, itemType, events } from "../../TypeScript/tsConfig";
 
 export default function AdminAddOption() {
   
@@ -69,7 +69,7 @@ export default function AdminAddOption() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addState.isSuccess]);
 
-  const handleForm = (e: any) => {
+  const handleForm = (e: events) => {
     e.preventDefault();
     if (data?.options.filter((item) => item.option === newoption).length <= 0)
       dispatch(

@@ -1,7 +1,7 @@
 import React from "react";
 interface props{
   text:string,
-  handler:any
+  handler:Function
 }
 export default function AlertAdd({ text ,handler }:props) {
   
@@ -16,7 +16,7 @@ export default function AlertAdd({ text ,handler }:props) {
         className="btn-close"
         data-bs-dismiss="alert"
         aria-label="Close"
-        onClick={handler}
+        onClick={(e)=>handler(e)}
       ></button>
     </div>
   )

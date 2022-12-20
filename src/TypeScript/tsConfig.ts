@@ -1,3 +1,4 @@
+
 export interface arrayState {
     data: [],
     isLoading: boolean,
@@ -24,7 +25,7 @@ export interface errorType {
 export interface events {
     preventDefault: Function,
     target: {
-        value: string | number,
+        value: string,
         name: string
     }
 }
@@ -77,10 +78,10 @@ export interface stateTypes {
 }
 
 
-export interface inputeProps {
-    handleChange: any,
+export interface inputProps {
+    handleChange: Function,
     number: number,
-    data: any
+    data: Object
 }
 
 export interface actionObject {
