@@ -1,8 +1,8 @@
-import { actionObject } from "../../TypeScript/tsConfig"
+import { ActionObject } from "../../TypeScript/tsConfig"
 import { LOGIN_SUCCESS, LOGIN_ERROR, LOGIN_REQUEST, LOGIN_RESET } from "../Actions/actionTypes"
 const intialstate = { isLoading: false, isSuccess: false, isError: false, data: {} }
 
-const LoginReducer = (state = intialstate, action:actionObject) => {
+const LoginReducer = (state = intialstate, action:ActionObject) => {
   switch (action.type) {
   case LOGIN_REQUEST: {
     return {

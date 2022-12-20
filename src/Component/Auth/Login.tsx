@@ -11,13 +11,13 @@ import Snackbar from "../Generic/Snackbar";
 import setlocalStorage from "../../services/setLocalStorage";
 import Wrapper from "../Generic/Wrapper";
 import FormWrapper from "../Generic/FormWrapper";
-import { stateTypes } from "../../TypeScript/tsConfig";
+import { StateTypes } from "../../TypeScript/tsConfig";
 
 export default function Login() {
   
   const dispatch = useDispatch();
-  const stateSignup = useSelector((state:stateTypes) => state.UserReducer);
-  const stateLogin = useSelector((state:stateTypes) => state.LoginReducer);
+  const stateSignup = useSelector((state:StateTypes) => state.UserReducer);
+  const stateLogin = useSelector((state:StateTypes) => state.LoginReducer);
   const navigate = useNavigate();
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { actionObject } from "../../TypeScript/tsConfig";
+import { ActionObject } from "../../TypeScript/tsConfig";
 import {
   OPTION_DEL_SUCCESS,
   OPTION_DEL_ERROR,
@@ -12,7 +12,7 @@ const intialstate = {
   data: {},
 };
 
-const optionDelReducer = (state = intialstate, action:actionObject) => {
+const optionDelReducer = (state = intialstate, action:ActionObject) => {
   switch (action.type) {
   case OPTION_DEL_REQUEST: {
     return {

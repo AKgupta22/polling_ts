@@ -1,9 +1,9 @@
 import React from "react";
-interface props{
+interface Props{
   text:string,
   handler:Function
 }
-export default function AlertAdd({ text ,handler }:props) {
+export default function AlertAdd({ text ,handler }:Props) {
   
   return (
     <div

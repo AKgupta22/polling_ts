@@ -3,9 +3,9 @@ import { LOGIN_REQUEST } from "../Actions/actionTypes"
 import { loginSuccess, loginError } from "../Actions"
 import FetchApi from "../API/FetchApi"
 import jwt_decode from "jwt-decode";
-import { payloadType } from "../../TypeScript/tsConfig";
+import { PayloadType } from "../../TypeScript/tsConfig";
 
-function* LoginData({ payload }: payloadType) {
+function* LoginData({ payload }: PayloadType) {
   const query = `login?username=${payload.username}&password=${payload.password}`
   interface responseType {
     data: {

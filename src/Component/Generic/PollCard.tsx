@@ -16,10 +16,10 @@ import Loader from "./Loader";
 import UserDashBoard from "../User/UserDashboard";
 import LinkButton from "../Generic/LinkButton";
 import SnackbarAuto from "./SnackbarAuto";
-import { events, itemType, stateTypes } from "../../TypeScript/tsConfig";
+import { Events, ItemType, StateTypes } from "../../TypeScript/tsConfig";
 
 interface props {
-  item: itemType;
+  item: ItemType;
   role: string;
 }
 
@@ -27,12 +27,12 @@ export default function PollCard({ item, role }: props) {
   
   const dispatch = useDispatch();
   const statePollList = useSelector(
-    (state: stateTypes) => state.pollFetchReducer
+    (state: StateTypes) => state.pollFetchReducer
   );
   const optionDelstate = useSelector(
-    (state: stateTypes) => state.optionDelReducer
+    (state: StateTypes) => state.optionDelReducer
   );
-  const pollDelState = useSelector((state: stateTypes) => state.PollDelReducer);
+  const pollDelState = useSelector((state: StateTypes) => state.PollDelReducer);
   const [delid, setDelid] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -53,7 +53,7 @@ export default function PollCard({ item, role }: props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pollDelState.isSuccess]);
 
-  const handleClose = (event: events, reason: string) => {
+  const handleClose = (event: Events, reason: string) => {
     if (reason === "clickaway") {
       return;
     }
@@ -104,7 +104,7 @@ export default function PollCard({ item, role }: props) {
           <h2 className="text-success p-2 m-auto admin-action_h2">
             Poll{" "}
             {statePollList.data.findIndex(
-              (element:itemType) => element._id === item._id
+              (element:ItemType) => element._id === item._id
             ) + 1}{" "}
             : {item.title}
           </h2>

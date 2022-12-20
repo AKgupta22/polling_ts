@@ -16,17 +16,17 @@ import Wrapper from "../Generic/Wrapper";
 import FormWrapper from "../Generic/FormWrapper";
 import AlertAdd from "../Generic/AlertAdd";
 import BackButton from "../Generic/BackButton";
-import { stateTypes, itemType, events } from "../../TypeScript/tsConfig";
+import { StateTypes, ItemType, Events } from "../../TypeScript/tsConfig";
 
 export default function AdminAddOption() {
   
   const dispatch = useDispatch();
-  const state = useSelector((state: stateTypes) => state.SinglePollReducer);
-  const addState = useSelector((state: stateTypes) => state.optionAddReducer);
+  const state = useSelector((state: StateTypes) => state.SinglePollReducer);
+  const addState = useSelector((state: StateTypes) => state.optionAddReducer);
   const pollListState = useSelector(
-    (state: stateTypes) => state.pollFetchReducer
+    (state: StateTypes) => state.pollFetchReducer
   );
-  const [data, setData] = useState<itemType>({
+  const [data, setData] = useState<ItemType>({
     _id: "",
     title: "",
     options: [
@@ -45,7 +45,7 @@ export default function AdminAddOption() {
   useEffect(() => {
     if (pollListState.data.length > 0) {
       const poll = pollListState.data.filter(
-        (item: itemType) => item._id === id
+        (item: ItemType) => item._id === id
       );
       setData(poll[0]);
     } else
@@ -69,7 +69,7 @@ export default function AdminAddOption() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addState.isSuccess]);
 
-  const handleForm = (e: events) => {
+  const handleForm = (e: Events) => {
     e.preventDefault();
     if (data?.options.filter((item) => item.option === newoption).length <= 0)
       dispatch(

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import setLocalStorage from "../../services/setLocalStorage";
 import getLocalStorage from "../../services/getLocalStorage";
 import removeLocalStorage from "../../services/removeLocalStorage";
-import { events, stateTypes } from "../../TypeScript/tsConfig";
+import { Events, StateTypes } from "../../TypeScript/tsConfig";
 interface props {
   setData: Function;
 }
@@ -15,7 +15,7 @@ export default function Pagination({ setData }: props) {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [count, setCount] = useState(0);
   const pollListState = useSelector(
-    (state: stateTypes) => state.pollFetchReducer
+    (state: StateTypes) => state.pollFetchReducer
   );
 
   useEffect(() => {
@@ -42,12 +42,12 @@ export default function Pagination({ setData }: props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowsPerPage, page, pollListState.isSuccess]);
 
-  const handleChangePage:Function = (event: events, newPage: number) => {
+  const handleChangePage:Function = (event: Events, newPage: number) => {
     setLocalStorage("page", newPage);
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event: events) => {
+  const handleChangeRowsPerPage = (event: Events) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     removeLocalStorage("page");
     setLocalStorage("rows", event.target.value);

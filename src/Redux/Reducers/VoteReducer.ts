@@ -1,8 +1,8 @@
-import { actionObject } from "../../TypeScript/tsConfig"
+import { ActionObject } from "../../TypeScript/tsConfig"
 import { VOTE_SUCCESS, VOTE_ERROR, VOTE_REQUEST, VOTE_RESET } from "../Actions/actionTypes"
 const intialstate = { isLoading: false, isSuccess: false, isError: false, data: {} }
 
-const voteReducer = (state = intialstate, action:actionObject) => {
+const voteReducer = (state = intialstate, action:ActionObject) => {
   switch (action.type) {
   case VOTE_REQUEST: {
     return {

@@ -1,9 +1,9 @@
 import React from "react";
-interface props {
+interface Props {
   children: React.ReactNode;
   handler: Function;
 }
-export default function Button(props: props) {
+export default function Button(props: Props) {
   return (
     <button
       className="btn background text-light text-center mx-1"

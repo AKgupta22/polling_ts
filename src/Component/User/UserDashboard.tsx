@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { pollReset, voteRequest, voteReset } from "../../Redux/Actions";
 import getLoacalStorage from "../../services/getLocalStorage";
 import setLoacalStorage from "../../services/setLocalStorage";
-import { itemType, stateTypes } from "../../TypeScript/tsConfig";
+import { ItemType, StateTypes } from "../../TypeScript/tsConfig";
 import Loader from "../Generic/Loader";
 import SnackbarAuto from "../Generic/SnackbarAuto";
 
 interface props {
-  item: itemType;
+  item: ItemType;
   index: number;
   name: string;
 }
@@ -16,7 +16,7 @@ interface props {
 export default function UserDashBoard(props: props) {
   
   const dispatch = useDispatch();
-  const voteState = useSelector((state: stateTypes) => state.voteReducer);
+  const voteState = useSelector((state: StateTypes) => state.voteReducer);
   const [optionId, setOptionId] = useState("");
   const [option, setOption] = useState("");
   const [open, setOpen] = useState(false);

@@ -7,12 +7,12 @@ import BackdropLoader from "../Generic/BackdropLoader";
 import { Link, useNavigate } from "react-router-dom";
 import Pagination from "../Generic/Pagination";
 import Button from "../Generic/Button";
-import { stateTypes } from "../../TypeScript/tsConfig";
+import { StateTypes } from "../../TypeScript/tsConfig";
 
 export default function AdminDashboard() {
   
   const statePollList = useSelector(
-    (state: stateTypes) => state.pollFetchReducer
+    (state: StateTypes) => state.pollFetchReducer
   );
   const [data, setData] = useState<[]>([]);
   const dispatch = useDispatch();

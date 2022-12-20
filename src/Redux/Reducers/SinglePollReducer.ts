@@ -1,8 +1,8 @@
-import { actionObject } from "../../TypeScript/tsConfig"
+import { ActionObject } from "../../TypeScript/tsConfig"
 import { SINGLE_POLL_SUCCESS, SINGLE_POLL_ERROR, SINGLE_POLL_REQUEST } from "../Actions/actionTypes"
 const intialstate = { isLoading: false, isSuccess: false, isError: false, data: {} }
 
-const SinglePollReducer = (state = intialstate, action:actionObject) => {
+const SinglePollReducer = (state = intialstate, action:ActionObject) => {
   switch (action.type) {
   case SINGLE_POLL_REQUEST: {
     return {

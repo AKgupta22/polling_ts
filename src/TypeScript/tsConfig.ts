@@ -1,12 +1,12 @@
 
-export interface arrayState {
+export interface ArrayState {
     data: [],
     isLoading: boolean,
     isSuccess: boolean,
     isError: boolean
 
 }
-export interface itemType {
+export interface ItemType {
     _id: string,
     options: [{
         option: string,
@@ -17,12 +17,12 @@ export interface itemType {
 
 }
 
-export interface errorType {
+export interface ErrorType {
     data: string
     error: number
 }
 
-export interface events {
+export interface Events {
     preventDefault: Function,
     target: {
         value: string,
@@ -30,14 +30,14 @@ export interface events {
     }
 }
 
-export interface objectState {
-    data: itemType,
+export interface ObjectState {
+    data: ItemType,
     isLoading: boolean,
     isSuccess: boolean,
     isError: boolean
 
 }
-interface signupType {
+interface SignupType {
     data: {
         data: {
             username: string,
@@ -50,7 +50,7 @@ interface signupType {
     isError: boolean
 }
 
-interface loginType {
+interface LoginType {
     data: {
         token: string,
         decoded: {
@@ -63,42 +63,42 @@ interface loginType {
     isError: boolean
 }
 
-export interface stateTypes {
-    UserReducer: signupType,
-    LoginReducer: loginType,
-    pollFetchReducer: arrayState,
-    PollAddReducer: objectState,
-    PollDelReducer: objectState,
-    SinglePollReducer: objectState,
-    PollEditReducer: objectState,
-    voteReducer: objectState,
-    optionAddReducer: objectState,
-    optionDelReducer: objectState
+export interface StateTypes {
+    UserReducer: SignupType,
+    LoginReducer: LoginType,
+    pollFetchReducer: ArrayState,
+    PollAddReducer: ObjectState,
+    PollDelReducer: ObjectState,
+    SinglePollReducer: ObjectState,
+    PollEditReducer: ObjectState,
+    voteReducer: ObjectState,
+    optionAddReducer: ObjectState,
+    optionDelReducer: ObjectState
 
 }
 
 
-export interface inputProps {
+export interface InputProps {
     handleChange: Function,
     number: number,
     data: Object
 }
 
-export interface actionObject {
+export interface ActionObject {
     type: string,
     payload: {
         data: object
     }
 }
 
-export interface actionArray {
+export interface ActionArray {
     type: string,
     payload: {
         data: []
     }
 }
 
-export interface payloadType {
+export interface PayloadType {
     payload: {
         text: string,
         id: string,
@@ -111,14 +111,14 @@ export interface payloadType {
     type: string
 }
 
-export interface responseType {
+export interface ResponseType {
     data: {
         error: number,
         data: Object
     }
 }
 
-export type payloadOption = {
+export type PayloadOption = {
     payload: {
         data: {
             title: string,

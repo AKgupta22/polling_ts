@@ -1,10 +1,10 @@
 import React from "react";
 import { Box } from "@mui/system";
-interface props {
+interface Props {
   children: React.ReactNode;
   handler: Function;
 }
-export default function FormWrapper(props: props) {
+export default function FormWrapper(props: Props) {
   return (
     <Box
       component="form"

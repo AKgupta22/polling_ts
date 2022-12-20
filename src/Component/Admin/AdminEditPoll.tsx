@@ -15,15 +15,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import Wrapper from "../Generic/Wrapper";
 import FormWrapper from "../Generic/FormWrapper";
 import BackButton from "../Generic/BackButton";
-import { events, itemType, stateTypes } from "../../TypeScript/tsConfig";
+import { Events, ItemType, StateTypes } from "../../TypeScript/tsConfig";
 
 export default function AdminEditPoll() {
   
   const dispatch = useDispatch();
-  const state = useSelector((state: stateTypes) => state.SinglePollReducer);
-  const editState = useSelector((state: stateTypes) => state.PollEditReducer);
+  const state = useSelector((state: StateTypes) => state.SinglePollReducer);
+  const editState = useSelector((state: StateTypes) => state.PollEditReducer);
   const pollListState = useSelector(
-    (state: stateTypes) => state.pollFetchReducer
+    (state: StateTypes) => state.pollFetchReducer
   );
   const [data, setData] = useState("");
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ export default function AdminEditPoll() {
   useEffect(() => {
     if (pollListState.data.length > 0) {
       const poll: { title: string } = pollListState.data.filter(
-        (item: itemType) => item._id === id
+        (item: ItemType) => item._id === id
       )[0];
       setData(poll.title);
     } else
@@ -58,7 +58,7 @@ export default function AdminEditPoll() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [editState.isSuccess]);
 
-  const handleForm = (e: events) => {
+  const handleForm = (e: Events) => {
     e.preventDefault();
     dispatch(
       pollEditRequest({

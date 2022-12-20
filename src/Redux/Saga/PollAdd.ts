@@ -2,9 +2,9 @@ import { call, put, takeEvery } from "@redux-saga/core/effects";
 import { POLL_ADD_REQUEST } from "../Actions/actionTypes"
 import { pollAddSuccess, pollAddError } from "../Actions"
 import FetchApi from "../API/FetchApi"
-import { payloadOption, responseType } from "../../TypeScript/tsConfig";
+import { PayloadOption, ResponseType } from "../../TypeScript/tsConfig";
 
-function* PollAddData({ payload }:payloadOption) {
+function* PollAddData({ payload }:PayloadOption) {
   let query = `add_poll?title=${payload.data.title}&options=${payload.data.option1}`
   if (payload.data.option2)
     query = query + `____${payload.data.option2}`
@@ -13,7 +13,7 @@ function* PollAddData({ payload }:payloadOption) {
   if (payload.data.option4)
     query = query + `____${payload.data.option4}`
   try {
-    const response:responseType = yield call(FetchApi, query)
+    const response:ResponseType = yield call(FetchApi, query)
     if (response.data.error === 0)
       yield put(pollAddSuccess())
     else

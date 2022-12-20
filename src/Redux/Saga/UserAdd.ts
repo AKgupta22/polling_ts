@@ -2,13 +2,13 @@ import { call, put, takeEvery } from "@redux-saga/core/effects";
 import { REGISTRATION_REQUEST } from "../Actions/actionTypes"
 import { registrationSuccess, registrationError } from "../Actions"
 import FetchApi from "../API/FetchApi"
-import { payloadType, responseType } from "../../TypeScript/tsConfig";
+import { PayloadType, ResponseType } from "../../TypeScript/tsConfig";
 
-function* RegisterData({ payload }:payloadType) {
+function* RegisterData({ payload }:PayloadType) {
   
   const query = `add_user?username=${payload.username}&password=${payload.password}&role=${payload.role}`
   try {
-    const response:responseType = yield call(FetchApi, query)
+    const response:ResponseType = yield call(FetchApi, query)
     if (response.data.error === 0)
       yield put(registrationSuccess(response.data))
     else

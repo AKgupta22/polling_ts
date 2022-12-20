@@ -14,12 +14,12 @@ import Snackbar from "../Generic/Snackbar";
 import AlertAdd from "../Generic/AlertAdd";
 import Wrapper from "../Generic/Wrapper";
 import FormWrapper from "../Generic/FormWrapper";
-import { stateTypes } from "../../TypeScript/tsConfig";
+import { StateTypes } from "../../TypeScript/tsConfig";
 
 export default function Signup() {
   
   const dispatch = useDispatch();
-  const state = useSelector((state:stateTypes) => state.UserReducer);
+  const state = useSelector((state:StateTypes) => state.UserReducer);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
 

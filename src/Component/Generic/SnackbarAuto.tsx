@@ -2,7 +2,7 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert ,{AlertProps,AlertColor} from "@mui/material/Alert";
-interface props{
+interface Props{
   handleClose:Function,
   open:boolean,
   type:AlertColor,
@@ -16,7 +16,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function SnackbarAuto(props:props) {
+export default function SnackbarAuto(props:Props) {
   
   return (
     <Stack spacing={2} sx={{ width: "100%" }}>

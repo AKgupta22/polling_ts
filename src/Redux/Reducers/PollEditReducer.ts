@@ -1,8 +1,8 @@
-import { actionObject } from "../../TypeScript/tsConfig"
+import { ActionObject } from "../../TypeScript/tsConfig"
 import { POLL_EDIT_REQUEST, POLL_EDIT_SUCCESS, POLL_EDIT_ERROR, POLL_EDIT_RESET } from "../Actions/actionTypes"
 const intialstate = { isLoading: false, isSuccess: false, isError: false, data: {} }
 
-const PollEditReducer = (state = intialstate, action:actionObject) => {
+const PollEditReducer = (state = intialstate, action:ActionObject) => {
   switch (action.type) {
 
   case POLL_EDIT_REQUEST: {

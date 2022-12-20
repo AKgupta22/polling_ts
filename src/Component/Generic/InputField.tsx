@@ -1,8 +1,8 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
-import { inputProps } from "../../TypeScript/tsConfig";
+import { InputProps } from "../../TypeScript/tsConfig";
 
-export default function InputField({ handleChange, number}: inputProps) { 
+export default function InputField({ handleChange, number}: InputProps) { 
   return (
     <>
       <TextField

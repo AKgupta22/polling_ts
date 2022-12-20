@@ -1,8 +1,8 @@
-import { actionArray } from "../../TypeScript/tsConfig"
+import { ActionArray } from "../../TypeScript/tsConfig"
 import { POLL_LIST_SUCCESS, POLL_LIST_ERROR, POLL_LIST_REQUEST, POLL_LIST_RESET } from "../Actions/actionTypes"
 const intialstate = { isLoading: false, isSuccess: false, isError: false, data: [] }
 
-const pollFetchReducer = (state = intialstate, action:actionArray) => {
+const pollFetchReducer = (state = intialstate, action:ActionArray) => {
   switch (action.type) {
 
   case POLL_LIST_REQUEST: {

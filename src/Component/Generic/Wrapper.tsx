@@ -1,11 +1,11 @@
 import React from "react";
 import { Grid } from "@mui/material";
-interface props{
+interface Props{
   heading:string,
   children:React.ReactNode
 }
 
-export default function Wrapper(props:props) {
+export default function Wrapper(props:Props) {
   return (
     <Grid container spacing={2} className="flex-form">
       <Grid item lg={4} md={3} sm={2} xs={1}></Grid>

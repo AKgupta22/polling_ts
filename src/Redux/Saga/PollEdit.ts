@@ -2,12 +2,12 @@ import { call, put, takeEvery } from "@redux-saga/core/effects";
 import { POLL_EDIT_REQUEST } from "../Actions/actionTypes"
 import { pollEditSuccess, pollEditError } from "../Actions"
 import FetchApi from "../API/FetchApi"
-import { payloadType, responseType } from "../../TypeScript/tsConfig";
+import { PayloadType, ResponseType } from "../../TypeScript/tsConfig";
 
-function* PollEditData({ payload }:payloadType) {
+function* PollEditData({ payload }:PayloadType) {
   const query = `update_poll_title?id=${payload.id}&title=${payload.newTitle}`
   try {
-    const response:responseType = yield call(FetchApi, query)
+    const response:ResponseType = yield call(FetchApi, query)
     if (response.data.error === 0)
       yield put(pollEditSuccess())
     else

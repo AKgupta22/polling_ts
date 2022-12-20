@@ -13,11 +13,11 @@ import Wrapper from "../Generic/Wrapper";
 import FormWrapper from "../Generic/FormWrapper";
 import removelocalStorage from "../../services/removeLocalStorage";
 import BackButton from "../Generic/BackButton";
-import { events, stateTypes } from "../../TypeScript/tsConfig";
+import { Events, StateTypes } from "../../TypeScript/tsConfig";
 
 export default function AdminAddPoll() {
   const dispatch = useDispatch();
-  const state = useSelector((state: stateTypes) => state.PollAddReducer);
+  const state = useSelector((state: StateTypes) => state.PollAddReducer);
   const [fields, setFields] = useState<Array<JSX.Element>>([]);
   const [show, setShow] = useState(false);
   const [duplicate, setDuplicate] = useState(false);
@@ -43,7 +43,7 @@ export default function AdminAddPoll() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isSuccess]);
 
-  const handleChange = (e: events) => {
+  const handleChange = (e: Events) => {
     const name = e.target.name;
     const value = e.target.value;
     setData((old) => {
@@ -54,7 +54,7 @@ export default function AdminAddPoll() {
     });
   };
 
-  const handleForm = (e: events) => {
+  const handleForm = (e: Events) => {
     e.preventDefault();
     const validateDuplicate = (arr: Array<Object>) =>
       new Set(arr).size !== arr.length;
