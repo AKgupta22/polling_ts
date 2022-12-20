@@ -5,7 +5,7 @@ import {
   singlePollRequest,
   optionAddRequest,
   optionAddReset,
-  pollRequest,
+  pollReset,
 } from "../../Redux/Actions";
 import getLocalStorage from "../../services/getLocalStorage";
 import { useDispatch, useSelector } from "react-redux";
@@ -63,7 +63,7 @@ export default function AdminAddOption() {
       navigate("/dashboard");
       return () => {
         dispatch(optionAddReset());
-        dispatch(pollRequest());
+        dispatch(pollReset());
       };
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

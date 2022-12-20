@@ -42,7 +42,7 @@ export default function Pagination({ setData }: props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowsPerPage, page, pollListState.isSuccess]);
 
-  const handleChangePage = (event: events, newPage: number) => {
+  const handleChangePage:any = (event: events, newPage: number) => {
     setLocalStorage("page", newPage);
     setPage(newPage);
   };
@@ -60,7 +60,7 @@ export default function Pagination({ setData }: props) {
       component="div"
       count={count}
       page={page}
-      onPageChange={() => handleChangePage}
+      onPageChange={handleChangePage}
       rowsPerPage={rowsPerPage}
       rowsPerPageOptions={[5, 10, 15]}
       onRowsPerPageChange={handleChangeRowsPerPage}
